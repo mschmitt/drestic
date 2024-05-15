@@ -5,10 +5,10 @@ drestic is restic with defaults
 # Synopsis
 
 ```
-install -D -m 755 drestic ~/bin/drestic
+install -D -m 755 <(curl https://raw.githubusercontent.com/mschmitt/drestic/main/drestic) ~/bin/drestic
+install -D -m 644 <(curl https://raw.githubusercontent.com/mschmitt/drestic/main/drestic) ~/.config/restic.conf
 install -D -m 600 /dev/null ~/.config/restic.password
 openssl rand -hex 32 > ~/.config/restic.password
-install -D -m 644 restic.conf ~/.config/restic.conf
 editor ~/.config/restic.conf
 drestic init
 drestic backup
