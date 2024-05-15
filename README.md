@@ -6,7 +6,7 @@ drestic is restic with defaults
 
 ```
 install -D -m 755 <(curl https://raw.githubusercontent.com/mschmitt/drestic/main/drestic) ~/bin/drestic
-install -D -m 644 <(curl https://raw.githubusercontent.com/mschmitt/drestic/main/drestic) ~/.config/restic.conf
+install -D -m 644 <(curl https://raw.githubusercontent.com/mschmitt/drestic/main/restic.conf) ~/.config/restic.conf
 install -D -m 600 /dev/null ~/.config/restic.password
 openssl rand -hex 32 > ~/.config/restic.password
 editor ~/.config/restic.conf
