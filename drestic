@@ -9,6 +9,7 @@ printf "+++ %s: drestic is restic with defaults - \$DRESTICRC=%s\n" "$(readlink 
 if [[ -e "${DRESTICRC}" ]]
 then
 	set -o allexport
+	cat "${DRESTICRC}"
 	source "${DRESTICRC}"
 	set +o allexport
 else
