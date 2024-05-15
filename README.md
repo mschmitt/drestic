@@ -10,7 +10,17 @@ install -D -m 600 /dev/null ~/.config/restic.password
 openssl rand -hex 32 > ~/.config/restic.password
 install -D -m 644 restic.conf ~/.config/restic.conf
 editor ~/.config/restic.conf
-alias restic=~/bin/drestic
+drestic init
+drestic backup
+drestic snapshots
+drestic forget --prune
+drestic mount ~/mnt
+```
+
+Optionally, alias _drestic_ to _restic_:
+
+```
+alias restic=~/bin/drestic # also add to ~/.bashrc
 restic init
 restic backup
 restic snapshots
@@ -20,10 +30,10 @@ restic mount ~/mnt
 
 # Suggestions for the user
 
-- Save the contents of _~/.config/restic.password_ independently.
-- Replace _RESTIC_PASSWORD_FILE_ with _RESTIC_PASSWORD_COMMAND_ and read the password from a password manager.
+- Backup the contents of _~/.config/restic.password_ independently.
+- Replace _$RESTIC_PASSWORD_FILE_ with _$RESTIC_PASSWORD_COMMAND_ and read the password from a password manager.
 
-# Example values for _RESTIC_REPOSITORY_
+# Example values for _$RESTIC_REPOSITORY_
 
 - `/tmp/my-demo-backup`
 - `/media/${LOGNAME}/Backup/restic-repo/`
