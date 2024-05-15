@@ -19,7 +19,7 @@ fi
 
 if [[ "${1}" == 'backup' ]]
 then
-	exec restic "$@" ${RESTIC__BACKUP_OPTS} ${RESTIC_EXCLUDES} ${RESTIC_INCLUDES}
+	exec restic "$@" ${RESTIC_BACKUP_OPTS} ${RESTIC_EXCLUDES} ${RESTIC_INCLUDES}
 elif [[ "${1}" == 'forget' ]]
 then
 	exec restic "$@" ${RESTIC_RETENTION}
